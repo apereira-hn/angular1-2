@@ -1,0 +1,28 @@
+
+<p
+    [style.fontFamily]="font"
+    [style.fontSize.px]="size"
+    [style.textAlign]="alignment">
+    Hello {{ name | uppercase }}!
+</p>
+<label>Name:
+    <input type="text" [(ngModel)]="name" />
+</label>
+<div>
+    <label>Font:
+        <select [(ngModel)]="font">
+            <option *ngFor="let font of fonts">{{ font }}</option>
+        </select>
+    </label>
+    <label>Size:
+        <input type="number" [(ngModel)]="size" />
+    </label>
+</div>
+<div>
+    <label>Alignment:
+        <label *ngFor="let align of alignments">
+            <input type="radio" [(ngModel)]="alignment" [value]="align" />
+            {{ align }}
+        </label>
+    </label>
+</div>

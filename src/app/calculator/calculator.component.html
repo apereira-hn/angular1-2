@@ -1,0 +1,18 @@
+<div>
+    <input type="number" [(ngModel)]="num1">
+    <select [(ngModel)]="operation">
+        <option *ngFor="let op of operations">{{op}}</option>
+    </select>
+    <input type="number" [(ngModel)]="num2">
+    <button (click)="calculate()">=</button>
+    {{ result }}
+</div>
+
+<div *ngFor="let historyItem of history; let i = index">
+    <div>
+        Time Stamp: {{ historyItem.time }} Operation: {{ historyItem.operation
+        }} =
+        {{ historyItem.result }}
+        <button (click)="removeHistory(i)">Remove</button>
+    </div>
+</div>
