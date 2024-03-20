@@ -8,7 +8,7 @@
     {{ result }}
 </div>
 
-<div *ngFor="let historyItem of history; let i = index">
+<div *ngFor="let historyItem of history.slice().reverse(); let i = index">
     <div>
         Time Stamp: {{ historyItem.time }} Operation: {{ historyItem.operation
         }} =
